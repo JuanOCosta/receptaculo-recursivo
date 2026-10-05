@@ -215,3 +215,16 @@ footer{
   .entry{grid-template-columns:1fr;gap:8px}
   aside{border-left:0;border-top:1px solid var(--ink);padding:30px 0 0}
 }
+/* Ajustes para los logos de Receptáculo Recursivo */
+.logo-hero {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+.footer-logo {
+    width: 50px;
+    height: auto;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
