@@ -1,0 +1,12 @@
+{%- assign exts = "png,jpg,jpeg,webp,svg" | split: "," -%}
+{%- assign ilustracion = "" -%}
+{%- for ext in exts -%}
+  {%- if ilustracion == "" -%}
+    {%- assign ruta = "/assets/img/" | append: include.carpeta | append: "/" | append: page.slug | append: "." | append: ext -%}
+    {%- assign hallada = site.static_files | where: "path", ruta | first -%}
+    {%- if hallada -%}{%- assign ilustracion = ruta -%}{%- endif -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if ilustracion != "" %}
+<figure class="texto-imagen"><img src="{{ ilustracion | relative_url }}" alt="Ilustración de {{ page.title | escape }}"></figure>
+{%- endif -%}

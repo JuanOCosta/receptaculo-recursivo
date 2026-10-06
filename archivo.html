@@ -1,0 +1,27 @@
+---
+layout: default
+title: Archivo
+description: Todo lo publicado: relatos y bitácora.
+permalink: /archivo/
+---
+<h1>Archivo</h1>
+<p>Todo lo publicado.</p>
+
+{% assign relatos = site.relatos | sort: "orden" %}
+{% if relatos.size > 0 %}
+<h2>Relatos</h2>
+<ul class="texto-lista">
+{% for r in relatos %}{% include texto-item.html item=r %}{% endfor %}
+</ul>
+{% endif %}
+
+{% if site.posts.size > 0 %}
+<h2>Bitácora</h2>
+<ul class="texto-lista">
+{% for p in site.posts %}{% include texto-item.html item=p %}{% endfor %}
+</ul>
+{% endif %}
+
+{% if relatos.size == 0 and site.posts.size == 0 %}
+<p class="vacio">Aún no hay nada archivado.</p>
+{% endif %}

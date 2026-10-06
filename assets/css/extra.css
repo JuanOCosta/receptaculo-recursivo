@@ -1,0 +1,26 @@
+/* Estilos añadidos para las plantillas Jekyll. No modifican style.css. */
+.texto-lista { list-style: none; margin: 2rem 0; padding: 0; }
+.texto-item { padding: 1.25rem 0; border-top: 1px solid rgba(128,128,128,.35); }
+.texto-item:last-child { border-bottom: 1px solid rgba(128,128,128,.35); }
+.texto-titulo { display: inline-block; font-size: 1.25rem; }
+.texto-meta { display: block; margin-top: .25rem; font-size: .9rem; opacity: .7; }
+.texto-item p { max-width: 42rem; margin: .5rem 0 0; }
+.texto-cuerpo { max-width: 40rem; font-size: 1.0625rem; line-height: 1.75; }
+.texto-cuerpo p { margin: 0 0 1.25rem; }
+.texto-imagen { margin: 1.5rem 0; }
+.texto-imagen img { display: block; max-width: 100%; height: auto; }
+.vacio { max-width: 40rem; opacity: .75; }
+.suscripcion { max-width: 40rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(128,128,128,.35); }
+.suscripcion form { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+.suscripcion input[type="email"] { flex: 1 1 14rem; padding: .65rem .75rem; font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; }
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+/* Índice de la portada y cortes de escena */
+.indice { max-width: 40rem; margin: 3rem 0; }
+.indice-lista { margin: 1rem 0 0; padding-left: 2.5rem; list-style: decimal-leading-zero; }
+.indice-lista li { padding: .35rem 0; }
+.indice-lista a { font-size: 1.15rem; }
+.corte { height: 3rem; }
+
+.centrado { text-align: center; }

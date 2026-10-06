@@ -1,0 +1,16 @@
+<header>
+<div class="site header-inner">
+<a class="brand" href="{{ '/' | relative_url }}">{{ site.title }}<small>del {{ site.title }} por {{ site.author }}</small></a>
+<nav>
+{%- for item in site.data.navegacion -%}
+  {%- assign activo = false -%}
+  {%- if item.url == '/' -%}
+    {%- if page.url == '/' -%}{%- assign activo = true -%}{%- endif -%}
+  {%- elsif page.url contains item.url -%}
+    {%- assign activo = true -%}
+  {%- endif -%}
+  <a class="{% if activo %}active{% endif %}" href="{{ item.url | relative_url }}">{{ item.titulo }}</a>
+{%- endfor -%}
+</nav>
+</div>
+</header>

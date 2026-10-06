@@ -1,0 +1,16 @@
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+{% feed_meta %}
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/favicon.svg' | relative_url }}">
+<link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/extra.css' | relative_url }}">
+{%- if page.slug %}
+{%- assign css_ruta = "/assets/css/paginas/" | append: page.slug | append: ".css" %}
+{%- assign css_propio = site.static_files | where: "path", css_ruta | first %}
+{%- if css_propio %}
+<link rel="stylesheet" href="{{ css_ruta | relative_url }}">
+{%- endif %}
+{%- endif %}
+</head>

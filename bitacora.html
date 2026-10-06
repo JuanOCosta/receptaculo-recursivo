@@ -1,0 +1,16 @@
+---
+layout: default
+title: Bitácora
+description: Notas sobre escritura, lecturas, proyectos y procesos.
+permalink: /bitacora/
+---
+<h1>Bitácora</h1>
+<p>Notas sobre escritura, lecturas, proyectos, procesos y cualquier otra cosa que merezca quedar registrada.</p>
+{% if site.posts.size > 0 %}
+<ul class="texto-lista">
+{% for p in site.posts %}{% include texto-item.html item=p %}{% endfor %}
+</ul>
+{% else %}
+<p class="vacio">La primera entrada se publicará aquí.</p>
+{% endif %}
+{% include suscripcion.html %}

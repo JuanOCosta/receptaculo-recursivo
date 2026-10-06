@@ -1,0 +1,12 @@
+<footer>
+<div class="site footer-inner">
+<span>© {{ site.time | date: "%Y" }} {{ site.author }} · Textos, imagen y diseño.</span>
+{% if site.redes.size > 0 %}
+<span class="socials">
+{%- for red in site.redes -%}
+  <a href="{{ red.url }}" aria-label="{{ red.nombre }}" rel="noopener">{{ red.nombre }}</a>
+{%- endfor -%}
+</span>
+{% endif %}
+</div>
+</footer>

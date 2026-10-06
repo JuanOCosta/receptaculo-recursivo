@@ -1,0 +1,64 @@
+# Configuración general del sitio — Receptáculo Recursivo
+title: Receptáculo Recursivo
+author: Juan O. Costa
+description: Relatos, pensamientos y otras cuestiones por Juan O. Costa.
+lang: es
+
+# Dirección pública. Si más adelante usas un dominio propio,
+# pon aquí tu dominio (https://tudominio.com) y deja baseurl vacío ("").
+url: "https://juanocosta.github.io"
+baseurl: "/receptaculo-recursivo"
+
+# Correo de contacto (opcional). Si lo rellenas, aparece en la página El autor.
+email: ""
+
+# Newsletter. Rellena UNA de las dos opciones; si ambas están vacías, no se muestra nada.
+suscripcion:
+  action: ""        # URL del formulario de tu servicio (p. ej. el de Buttondown)
+  campo_email: email
+  enlace: ""        # alternativa: enlace a tu página de suscripción (p. ej. Substack)
+
+# Redes sociales del pie de página. Solo aparecen las que añadas aquí.
+redes: []
+# redes:
+#   - nombre: Instagram
+#     url: https://instagram.com/tu_usuario
+
+# Imagen por defecto al compartir enlaces (debe coincidir con la de "defaults" más abajo).
+imagen_defecto: /assets/receptaculo.png
+
+# Las entradas de la bitácora viven en _posts/ y salen en /bitacora/nombre-de-la-entrada/
+# (el nombre es el del archivo sin la fecha). Cada relato sale en /nombre-del-relato/.
+permalink: /bitacora/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  relatos:
+    output: true
+    permalink: /:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      image: /assets/receptaculo.png
+  - scope:
+      path: ""
+      type: relatos
+    values:
+      layout: relato
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - _plantillas

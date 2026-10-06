@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'es' }}">
+{% include head.html %}
+<body{% if page.slug %} class="pagina-{{ page.slug }}"{% endif %}>
+{% include header.html %}
+<main class="site">
+{{ content }}
+</main>
+{% include footer.html %}
+</body>
+</html>

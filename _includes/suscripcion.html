@@ -1,0 +1,17 @@
+{% if site.suscripcion.action and site.suscripcion.action != "" %}
+<section class="suscripcion">
+  <h2>Recibe los nuevos textos</h2>
+  <p>Te escribo cuando publico un relato o una entrada nueva.</p>
+  <form action="{{ site.suscripcion.action }}" method="post" target="_blank" rel="noopener">
+    <label class="vh" for="correo-suscripcion">Correo electrónico</label>
+    <input type="email" id="correo-suscripcion" name="{{ site.suscripcion.campo_email | default: 'email' }}" placeholder="tu@correo.com" required>
+    <button class="button" type="submit">Suscribirme</button>
+  </form>
+</section>
+{% elsif site.suscripcion.enlace and site.suscripcion.enlace != "" %}
+<section class="suscripcion">
+  <h2>Recibe los nuevos textos</h2>
+  <p>Te escribo cuando publico un relato o una entrada nueva.</p>
+  <a class="button" href="{{ site.suscripcion.enlace }}" rel="noopener">Suscribirme</a>
+</section>
+{% endif %}

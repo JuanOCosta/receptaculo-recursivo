@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<article class="texto">
+  <h1>{{ page.title }}</h1>
+  {% include ilustracion.html carpeta="relatos" %}
+  <div class="texto-cuerpo">
+    {{ content }}
+  </div>
+</article>
+{% include suscripcion.html %}
+<p><a href="{{ '/relatos/' | relative_url }}">← Todos los relatos</a></p>

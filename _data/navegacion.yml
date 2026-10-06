@@ -1,0 +1,14 @@
+- titulo: Inicio
+  url: /
+- titulo: Relatos
+  url: /relatos/
+- titulo: Bitácora
+  url: /bitacora/
+- titulo: Archivo
+  url: /archivo/
+- titulo: El autor
+  url: /autor/
+# Cuando tengas algo que vender, quita el # de estas dos líneas
+# y cambia "published: false" por "published: true" en tienda.html
+# - titulo: Tienda
+#   url: /tienda/

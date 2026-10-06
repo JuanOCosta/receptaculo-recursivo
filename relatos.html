@@ -1,0 +1,17 @@
+---
+layout: default
+title: Relatos
+description: Ficción breve, humor oscuro, ideas incómodas y mecanismos narrativos.
+permalink: /relatos/
+---
+<h1>Relatos</h1>
+<p>Ficción breve, humor oscuro, ideas incómodas y mecanismos narrativos.</p>
+{% assign lista = site.relatos | sort: "orden" %}
+{% if lista.size > 0 %}
+<ul class="texto-lista">
+{% for r in lista %}{% include texto-item.html item=r %}{% endfor %}
+</ul>
+{% else %}
+<p class="vacio">Los primeros relatos se publicarán aquí.</p>
+{% endif %}
+{% include suscripcion.html %}
