@@ -1,0 +1,44 @@
+---
+layout: default
+---
+{% assign relatos = site.relatos | sort: "orden" %}
+<section class="hero">
+<div class="hero-copy">
+<div class="kicker">Literatura · pensamiento · otras cuestiones</div>
+<h1>Receptáculo<br>Recursivo</h1>
+<p class="hero-lead">Un lugar para textos que contienen otros textos, ideas que se repliegan sobre sí mismas y relatos que prefieren no explicar demasiado.</p>
+<p class="hero-note">Por Juan O. Costa. Escritura, observación, ficción y otras formas de insistencia.</p>
+<a class="button" href="{{ '/relatos/' | relative_url }}">Entrar en los relatos →</a>
+</div>
+<div class="hero-art">
+<img src="{{ '/assets/receptaculo.png' | relative_url }}" alt="Ilustración en blanco y negro de un receptáculo recursivo, obra de Juan O. Costa">
+</div>
+</section>
+
+{% if relatos.size > 0 %}
+<section class="indice" id="indice">
+<div class="label">Índice</div>
+<ol class="indice-lista">
+{%- for r in relatos %}
+<li><a href="{{ r.url | relative_url }}">{{ r.title }}</a></li>
+{%- endfor %}
+</ol>
+</section>
+{% endif %}
+
+<div class="intro-grid">
+<div>
+<div class="label">Último movimiento</div>
+<h2>Relatos</h2>
+<p>Una colección en construcción. Ficción breve, humor oscuro, ideas incómodas y mecanismos narrativos.</p>
+<a href="{{ '/relatos/' | relative_url }}">Ver relatos →</a>
+</div>
+<div>
+<div class="label">Registro</div>
+<h2>Bitácora</h2>
+<p>Notas sobre escritura, lecturas, proyectos, procesos y cualquier otra cosa que merezca quedar registrada.</p>
+<a href="{{ '/bitacora/' | relative_url }}">Leer la bitácora →</a>
+</div>
+</div>
+
+{% include suscripcion.html %}
