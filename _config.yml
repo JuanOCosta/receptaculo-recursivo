@@ -19,7 +19,7 @@ suscripcion:
   enlace: ""        # alternativa: enlace a tu página de suscripción (p. ej. Substack)
 
 # Redes sociales del pie de página. Solo aparecen las que añadas aquí.
-redes: []
+#redes: []
 # redes:
 redes:
   - nombre: Instagram
