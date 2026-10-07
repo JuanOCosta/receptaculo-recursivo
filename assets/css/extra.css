@@ -381,17 +381,7 @@ nav a.active::before {
     font-size: 1.35rem;
   }
 }
+/* Más aire entre el título y el cuerpo en relatos y entradas */
 .texto > h1 {
-  margin-bottom: 1rem;
-}
-
-.texto > h1::after {
-  content: "*";
-  display: block;
-  margin-top: 1.25rem;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: .9rem;
-  letter-spacing: 0;
-  opacity: .4;
-  font-weight: 400;
+  margin-bottom: 2.5rem;
 }
