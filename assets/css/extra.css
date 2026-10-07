@@ -310,17 +310,6 @@ nav a.active::before {
     padding-left: 2rem;
   }
 }
-/* El texto ocupa más ancho, la R menos */
-.hero {
-  grid-template-columns: minmax(320px, 1.2fr) minmax(260px, .9fr);
-  min-height: auto;
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.hero-art img {
-  width: min(100%, 420px);
-}
 /* ---------- Portada: centrar el conjunto texto + R ---------- */
 
 .hero {
