@@ -29,7 +29,7 @@ redes:
   - nombre: Whatsapp
     url: "https://wa.me/59898896524"
 # Imagen por defecto al compartir enlaces (debe coincidir con la de "defaults" más abajo).
-imagen_defecto: /assets/receptaculo.png
+imagen_defecto: /assets/og.png
 
 # Las entradas de la bitácora viven en _posts/ y salen en /bitacora/nombre-de-la-entrada/
 # (el nombre es el del archivo sin la fecha). Cada relato sale en /nombre-del-relato/.
@@ -49,7 +49,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/receptaculo.png
+      image: /assets/og.png
   - scope:
       path: ""
       type: relatos
