@@ -229,9 +229,16 @@ main.site > h2 {
 /* ---------- Navegación: marcar sección activa ---------- */
 
 nav a.active::before {
-  content: "·";
-  margin-right: .4em;
-  opacity: .55;
+  content: "*";
+  margin-right: .45em;
+  opacity: .6;
+  font-size: 1.05em;
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
 }
 
 /* ---------- Footer: enlaces extra ---------- */
