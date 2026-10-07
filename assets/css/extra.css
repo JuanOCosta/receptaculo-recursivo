@@ -276,9 +276,7 @@ nav a.active::before {
     line-height: 1.75;
   }
 
-  .texto-cuerpo p:first-of-type:not(:has(> strong:only-child))::first-letter {
-    font-size: 3em;
-  }
+ .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
 
   .texto-titulo {
     font-size: 1.15rem;
