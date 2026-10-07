@@ -21,9 +21,12 @@ suscripcion:
 # Redes sociales del pie de página. Solo aparecen las que añadas aquí.
 redes: []
 # redes:
-#   - nombre: Instagram
-#     url: https://instagram.com/tu_usuario
-
+   - nombre: Instagram
+     url: "https://www.instagram.com/juan.ocos/"
+   - nombre: Twitter  
+     url: "https://x.com/Ocos_Tagon"
+   - nombre: Whatsapp
+   - url: "https://wa.me/59899123456"
 # Imagen por defecto al compartir enlaces (debe coincidir con la de "defaults" más abajo).
 imagen_defecto: /assets/receptaculo.png
 
