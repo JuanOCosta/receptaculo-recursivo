@@ -1,36 +1,191 @@
 /* Estilos añadidos para las plantillas Jekyll. No modifican style.css. */
-.texto-lista { list-style: none; margin: 2rem 0; padding: 0; }
-.texto-item { padding: 1.25rem 0; border-top: 1px solid rgba(128,128,128,.35); }
-.texto-item:last-child { border-bottom: 1px solid rgba(128,128,128,.35); }
-.texto-titulo { display: inline-block; font-size: 1.25rem; }
-.texto-meta { display: block; margin-top: .25rem; font-size: .9rem; opacity: .7; }
-.texto-item p { max-width: 42rem; margin: .5rem 0 0; }
-.texto-cuerpo { max-width: 40rem; font-size: 1.0625rem; line-height: 1.75; }
-.texto-cuerpo p { margin: 0 0 1.25rem; }
-.texto-imagen { margin: 1.5rem 0; }
-.texto-imagen img { display: block; max-width: 100%; height: auto; }
-.vacio { max-width: 40rem; opacity: .75; }
-.suscripcion { max-width: 40rem; margin: 3rem 0 1rem; padding-top: 1.5rem; border-top: 1px solid rgba(128,128,128,.35); }
-.suscripcion form { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
-.suscripcion input[type="email"] { flex: 1 1 14rem; padding: .65rem .75rem; font: inherit; color: inherit; background: transparent; border: 1px solid currentColor; }
-.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+.texto-lista {
+  list-style: none;
+  width: min(40rem, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: 0;
+  text-align: left;
+}
+
+.texto-item {
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(128,128,128,.35);
+}
+
+.texto-item:last-child {
+  border-bottom: 1px solid rgba(128,128,128,.35);
+}
+
+.texto-titulo {
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
+.texto-meta {
+  display: block;
+  margin-top: .25rem;
+  font-size: .9rem;
+  opacity: .7;
+}
+
+.texto-item p {
+  max-width: 42rem;
+  margin: .5rem 0 0;
+}
+
+.texto-cuerpo {
+  width: min(40rem, calc(100% - 2rem));
+  margin-inline: auto;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  text-align: left;
+}
+
+.texto-cuerpo p {
+  margin: 0 0 1.25rem;
+}
+
+.texto-imagen {
+  margin: 1.5rem 0;
+}
+
+.texto-imagen img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.vacio {
+  width: min(40rem, calc(100% - 2rem));
+  margin-inline: auto;
+  text-align: left;
+  opacity: .75;
+}
+
+.suscripcion {
+  width: min(40rem, calc(100% - 2rem));
+  margin: 3rem auto 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(128,128,128,.35);
+}
+
+.suscripcion form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.suscripcion input[type="email"] {
+  flex: 1 1 14rem;
+  padding: .65rem .75rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
 
 /* Índice de la portada y cortes de escena */
-.indice { max-width: 40rem; margin: 3rem 0; }
-.indice-lista { margin: 1rem 0 0; padding-left: 2.5rem; list-style: decimal-leading-zero; }
-.indice-lista li { padding: .35rem 0; }
-.indice-lista a { font-size: 1.15rem; }
-.corte { height: 3rem; }
 
-.centrado { text-align: center; }
-/* Títulos centrados en relatos y entradas de la bitácora */
-.texto h1, main.site > h1, h1.page-title { text-align: center; font-size: 1.5rem; line-height: 1.3; margin: 0 0 1.5rem; }
-.texto-imagen img { margin-inline: auto; }
-body.pagina-entrada-00 .texto-cuerpo > p:nth-of-type(-n+3) { text-align: center; }
-/* Texto de introducción centrado bajo los títulos de las páginas */
-main.site > p, .lead { text-align: center; margin-inline: auto; }
-main.site > p { max-width: 40rem; }
-/* Listas y subtítulos centrados en las páginas */
-.texto-lista { max-width: 40rem; margin-inline: auto; text-align: center; }
-main.site > h2 { text-align: center; }
+.indice {
+  width: min(40rem, calc(100% - 2rem));
+  margin: 3rem auto;
+  text-align: left;
+}
+
+.indice-lista {
+  margin: 1rem 0 0;
+  padding-left: 2.5rem;
+  list-style: decimal-leading-zero;
+}
+
+.indice-lista li {
+  padding: .35rem 0;
+}
+
+.indice-lista a {
+  font-size: 1.15rem;
+}
+
+.corte {
+  height: 3rem;
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* Títulos centrados */
+
+.texto h1,
+main.site > h1,
+h1.page-title {
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin: 0 0 1.5rem;
+}
+
+/* Introducción centrada bajo los títulos */
+
+main.site > p,
+.lead {
+  text-align: center;
+  margin-inline: auto;
+}
+
+main.site > p {
+  width: min(40rem, calc(100% - 2rem));
+}
+
+/* Subtítulos */
+
+main.site > h2 {
+  text-align: center;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+  .texto-lista,
+  .texto-cuerpo,
+  .vacio,
+  .suscripcion,
+  .indice,
+  main.site > p {
+    width: calc(100% - 2rem);
+  }
+
+  .texto-cuerpo {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .texto-titulo {
+    font-size: 1.15rem;
+  }
+
+  .indice-lista {
+    padding-left: 2rem;
+  }
+
+}
