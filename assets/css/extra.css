@@ -31,3 +31,6 @@ body.pagina-entrada-00 .texto-cuerpo > p:nth-of-type(-n+3) { text-align: center;
 /* Texto de introducción centrado bajo los títulos de las páginas */
 main.site > p, .lead { text-align: center; margin-inline: auto; }
 main.site > p { max-width: 40rem; }
+/* Listas y subtítulos centrados en las páginas */
+.texto-lista { max-width: 40rem; margin-inline: auto; text-align: center; }
+main.site > h2 { text-align: center; }
