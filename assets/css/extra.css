@@ -59,20 +59,14 @@ body {
   hyphens: none;
 }
 
-/* Espacio entre párrafos: solo hijos directos de .texto-cuerpo,
-   así la cabecera de bitácora (que va dentro de <header>) queda afuera. */
 .texto-cuerpo > p {
   margin: 0 0 .35rem;
 }
 
-/* Párrafos siguientes al primero: sangría editorial clásica. */
 .texto-cuerpo > p + p {
   text-indent: 1.5em;
 }
 
-/* Primer párrafo: sin sangría y con capitular.
-   Excepción: si el primer párrafo es un encabezado (todo en <strong>),
-   no se aplica capitular ni sangría, porque se ve mal. */
 .texto-cuerpo > p:first-of-type {
   text-indent: 0;
 }
@@ -86,14 +80,12 @@ body {
   font-weight: 500;
 }
 
-/* Cursivas y énfasis. */
 .texto-cuerpo em {
   font-style: italic;
 }
 
 /* ---------- Cortes de escena ---------- */
 
-/* Antes: un bloque vacío de 3rem. Ahora: tres asteriscos centrados. */
 .corte {
   height: auto;
   margin: 2.5rem 0;
@@ -258,48 +250,6 @@ nav a.active::before {
   text-underline-offset: 4px;
 }
 
-/* ---------- Responsive ---------- */
-
-@media (max-width: 600px) {
-
-  .texto-lista,
-  .texto-cuerpo,
-  .vacio,
-  .suscripcion,
-  .indice,
-  main.site > p {
-    width: calc(100% - 2rem);
-  }
-
-  .texto-cuerpo {
-    font-size: 1.0625rem;
-    line-height: 1.75;
-  }
-
- .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
-
-  .texto-titulo {
-    font-size: 1.15rem;
-  }
-
-  .texto h1,
-  main.site > h1,
-  h1.page-title {
-    margin-top: 2rem;
-    font-size: 2rem;
-  }
-
-  main.site > p,
-  .lead {
-    font-size: .78rem;
-    letter-spacing: .04em;
-  }
-
-  .indice-lista {
-    padding-left: 2rem;
-  }
-}
-
 /* ---------- Portada: centrar el conjunto texto + R ---------- */
 
 .hero {
@@ -326,22 +276,6 @@ nav a.active::before {
   width: min(100%, 380px);
 }
 
-@media (max-width: 800px) {
-  .hero {
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    padding: 40px 0;
-  }
-
-  .hero-copy {
-    max-width: none;
-  }
-
-  .hero-art img {
-    width: min(100%, 320px);
-  }
-}
 /* ---------- Cabecera de las entradas de bitácora ---------- */
 
 .entrada-cabecera {
@@ -383,7 +317,66 @@ nav a.active::before {
   opacity: .75;
 }
 
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .hero {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-art img {
+    width: min(100%, 320px);
+  }
+}
+
 @media (max-width: 600px) {
+
+  .texto-lista,
+  .texto-cuerpo,
+  .vacio,
+  .suscripcion,
+  .indice,
+  main.site > p {
+    width: calc(100% - 2rem);
+  }
+
+  .texto-cuerpo {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
+    font-size: 3em;
+  }
+
+  .texto-titulo {
+    font-size: 1.15rem;
+  }
+
+  .texto h1,
+  main.site > h1,
+  h1.page-title {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  main.site > p,
+  .lead {
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+
+  .indice-lista {
+    padding-left: 2rem;
+  }
+
   .entrada-cabecera .entrada-subtitulo {
     font-size: 1.35rem;
   }
