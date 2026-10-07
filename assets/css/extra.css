@@ -258,16 +258,6 @@ nav a.active::before {
 
 /* ---------- Responsive ---------- */
 
-@media (max-width: 800px) {
-
-  /* En mobile el hero ya no ocupa toda la pantalla:
-     así se ve el índice sin scrollear tanto. */
- .hero {
-  width: min(100%, 900px);
-  margin-inline: auto;
-}
-}
-
 @media (max-width: 600px) {
 
   .texto-lista,
@@ -309,9 +299,12 @@ nav a.active::before {
     padding-left: 2rem;
   }
 }
+
 /* ---------- Portada: centrar el conjunto texto + R ---------- */
 
 .hero {
+  width: min(100%, 1000px);
+  margin-inline: auto;
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
@@ -335,6 +328,7 @@ nav a.active::before {
 
 @media (max-width: 800px) {
   .hero {
+    width: 100%;
     grid-template-columns: 1fr;
     gap: 30px;
     padding: 40px 0;
