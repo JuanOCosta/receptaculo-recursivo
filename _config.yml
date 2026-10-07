@@ -60,7 +60,11 @@ defaults:
       type: posts
     values:
       layout: post
-
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: default
 exclude:
   - README.md
   - Gemfile
