@@ -256,40 +256,6 @@ nav a.active::before {
   text-underline-offset: 4px;
 }
 
-/* ---------- Modo oscuro ---------- */
-
-@media (prefers-color-scheme: dark) {
-
-  :root {
-    --bg: #111111;
-    --ink: #ecebe5;
-    --muted: #9a988f;
-    --line: #33322d;
-    --paper: #1a1a18;
-  }
-
-  header {
-    background: rgba(17,17,17,.94);
-  }
-
-  /* La R decorativa: en claro funciona con "multiply",
-     en oscuro la invertimos y usamos "screen" para que el blanco
-     del fondo desaparezca y quede solo la letra. */
-  .hero-art img {
-    filter: invert(1);
-    mix-blend-mode: screen;
-  }
-
-  .texto-item,
-  .suscripcion {
-    border-color: var(--line);
-  }
-
-  .suscripcion input[type="email"] {
-    border-color: var(--line);
-  }
-}
-
 /* ---------- Responsive ---------- */
 
 @media (max-width: 800px) {
