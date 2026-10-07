@@ -262,11 +262,10 @@ nav a.active::before {
 
   /* En mobile el hero ya no ocupa toda la pantalla:
      así se ve el índice sin scrollear tanto. */
-  .hero {
-    min-height: auto;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
+ .hero {
+  width: min(100%, 900px);
+  margin-inline: auto;
+}
 }
 
 @media (max-width: 600px) {
