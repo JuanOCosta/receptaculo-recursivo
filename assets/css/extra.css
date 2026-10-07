@@ -351,13 +351,13 @@ nav a.active::before {
     max-width: none;
   }
 }
-/* ---------- Portada: acercar el texto y la R ---------- */
+/* ---------- Portada: centrar el conjunto texto + R ---------- */
 
 .hero {
   grid-template-columns: auto auto;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 40px;
   min-height: auto;
   padding: 60px 0;
 }
@@ -366,8 +366,13 @@ nav a.active::before {
   max-width: 480px;
 }
 
+.hero-art {
+  display: flex;
+  justify-content: center;
+}
+
 .hero-art img {
-  width: min(100%, 420px);
+  width: min(100%, 380px);
 }
 
 @media (max-width: 800px) {
@@ -379,5 +384,9 @@ nav a.active::before {
 
   .hero-copy {
     max-width: none;
+  }
+
+  .hero-art img {
+    width: min(100%, 320px);
   }
 }
