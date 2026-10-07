@@ -4,7 +4,7 @@
 {% if site.redes.size > 0 %}
 <span class="socials">
 {%- for red in site.redes -%}
-  <a href="{{ red.url }}" aria-label="{{ red.nombre }}" rel="noopener">{{ red.nombre }}</a>
+  <a href="{{ red.url }}" aria-label="{{ red.nombre }}" target="_blank" rel="noopener noreferrer">{{ red.nombre }}</a>
 {%- endfor -%}
 </span>
 {% endif %}
