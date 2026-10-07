@@ -1,4 +1,18 @@
-/* Estilos añadidos para las plantillas Jekyll. No modifican style.css. */
+/* ============================================================
+   Estilos añadidos para las plantillas Jekyll.
+   No modifican style.css.
+   ============================================================ */
+
+/* ---------- Tipografía fina ---------- */
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* ---------- Listas (relatos / bitácora / archivo) ---------- */
 
 .texto-lista {
   list-style: none;
@@ -34,17 +48,66 @@
   margin: .5rem 0 0;
 }
 
+/* ---------- Cuerpo de lectura (todos los relatos y entradas) ---------- */
+
 .texto-cuerpo {
-  width: min(40rem, calc(100% - 2rem));
+  width: min(38rem, calc(100% - 2rem));
   margin-inline: auto;
-  font-size: 1.0625rem;
-  line-height: 1.75;
+  font-size: 1.125rem;
+  line-height: 1.8;
   text-align: left;
+  hyphens: none;
 }
 
+/* Espacio entre párrafos: discreto. El ritmo lo da la sangría. */
 .texto-cuerpo p {
-  margin: 0 0 1.25rem;
+  margin: 0 0 .35rem;
 }
+
+/* Párrafos siguientes al primero: sangría editorial clásica. */
+.texto-cuerpo p + p {
+  text-indent: 1.5em;
+}
+
+/* Primer párrafo: sin sangría y con capitular.
+   Excepción: si el primer párrafo es un encabezado (todo en <strong>),
+   no se aplica capitular ni sangría, porque se ve mal. */
+.texto-cuerpo p:first-of-type {
+  text-indent: 0;
+}
+
+.texto-cuerpo p:first-of-type:not(:has(> strong:only-child))::first-letter {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 3.6em;
+  line-height: .85;
+  float: left;
+  padding: .08em .12em 0 0;
+  font-weight: 500;
+}
+
+/* Cursivas y énfasis. */
+.texto-cuerpo em {
+  font-style: italic;
+}
+
+/* ---------- Cortes de escena ---------- */
+
+/* Antes: un bloque vacío de 3rem. Ahora: tres asteriscos centrados. */
+.corte {
+  height: auto;
+  margin: 2.5rem 0;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .85rem;
+  letter-spacing: .6em;
+  opacity: .5;
+}
+
+.corte::before {
+  content: "* * *";
+}
+
+/* ---------- Ilustración ---------- */
 
 .texto-imagen {
   margin: 1.5rem 0;
@@ -57,15 +120,17 @@
   margin-inline: auto;
 }
 
+/* ---------- Vacíos y suscripción ---------- */
+
 .vacio {
-  width: min(40rem, calc(100% - 2rem));
+  width: min(38rem, calc(100% - 2rem));
   margin-inline: auto;
   text-align: left;
   opacity: .75;
 }
 
 .suscripcion {
-  width: min(40rem, calc(100% - 2rem));
+  width: min(38rem, calc(100% - 2rem));
   margin: 3rem auto 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(128,128,128,.35);
@@ -103,7 +168,7 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Índice de la portada y cortes de escena */
+/* ---------- Índice de la portada ---------- */
 
 .indice {
   width: min(40rem, calc(100% - 2rem));
@@ -125,44 +190,118 @@ button:focus-visible {
   font-size: 1.15rem;
 }
 
-.corte {
-  height: 3rem;
+/* ---------- Títulos y encabezados ---------- */
+
+.texto h1,
+main.site > h1,
+h1.page-title {
+  margin: 3rem auto .75rem;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -.01em;
+  max-width: min(38rem, calc(100% - 2rem));
+}
+
+main.site > p,
+.lead {
+  margin: 0 auto 2.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  line-height: 1.55;
+  text-align: center;
+  max-width: min(38rem, calc(100% - 2rem));
+}
+
+main.site > h2 {
+  text-align: center;
+  font-weight: 500;
 }
 
 .centrado {
   text-align: center;
 }
 
-/* Títulos centrados */
+/* ---------- Navegación: marcar sección activa ---------- */
 
-.texto h1,
-main.site > h1,
-h1.page-title {
-  text-align: center;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  margin: 0 0 1.5rem;
+nav a.active::before {
+  content: "·";
+  margin-right: .4em;
+  opacity: .55;
 }
 
-/* Introducción centrada bajo los títulos */
+/* ---------- Footer: enlaces extra ---------- */
 
-main.site > p,
-.lead {
-  text-align: center;
-  margin-inline: auto;
+.footer-nav {
+  display: flex;
+  gap: 16px;
+  font: 11px "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  justify-content: flex-start;
 }
 
-main.site > p {
-  width: min(40rem, calc(100% - 2rem));
+.footer-nav a {
+  color: inherit;
+  opacity: .8;
 }
 
-/* Subtítulos */
-
-main.site > h2 {
-  text-align: center;
+.footer-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-/* Responsive */
+/* ---------- Modo oscuro ---------- */
+
+@media (prefers-color-scheme: dark) {
+
+  :root {
+    --bg: #111111;
+    --ink: #ecebe5;
+    --muted: #9a988f;
+    --line: #33322d;
+    --paper: #1a1a18;
+  }
+
+  header {
+    background: rgba(17,17,17,.94);
+  }
+
+  /* La R decorativa: en claro funciona con "multiply",
+     en oscuro la invertimos y usamos "screen" para que el blanco
+     del fondo desaparezca y quede solo la letra. */
+  .hero-art img {
+    filter: invert(1);
+    mix-blend-mode: screen;
+  }
+
+  .texto-item,
+  .suscripcion {
+    border-color: var(--line);
+  }
+
+  .suscripcion input[type="email"] {
+    border-color: var(--line);
+  }
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+
+  /* En mobile el hero ya no ocupa toda la pantalla:
+     así se ve el índice sin scrollear tanto. */
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
 
 @media (max-width: 600px) {
 
@@ -176,44 +315,20 @@ main.site > h2 {
   }
 
   .texto-cuerpo {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .texto-cuerpo p:first-of-type:not(:has(> strong:only-child))::first-letter {
+    font-size: 3em;
   }
 
   .texto-titulo {
     font-size: 1.15rem;
   }
-  /* Títulos de páginas y textos individuales */
 
-main.site > h1,
-.texto h1,
-h1.page-title {
-  margin-top: 3rem;
-  margin-bottom: .75rem;
-  font-family: "EB Garamond", Georgia, serif;
-  font-size: 2.4rem;
-  font-weight: 400;
-  line-height: 1.15;
-  text-align: center;
-}
-
-main.site > p,
-.lead {
-  margin-top: 0;
-  margin-bottom: 2.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9rem;
-  font-weight: 400;
-  letter-spacing: .06em;
-  line-height: 1.5;
-  text-align: center;
-}
-
-/* En pantallas pequeñas */
-
-@media (max-width: 600px) {
-  main.site > h1,
   .texto h1,
+  main.site > h1,
   h1.page-title {
     margin-top: 2rem;
     font-size: 2rem;
@@ -221,13 +336,11 @@ main.site > p,
 
   main.site > p,
   .lead {
-    font-size: .82rem;
+    font-size: .78rem;
     letter-spacing: .04em;
   }
-}
 
   .indice-lista {
     padding-left: 2rem;
   }
-
 }
