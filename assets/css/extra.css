@@ -59,24 +59,25 @@ body {
   hyphens: none;
 }
 
-/* Espacio entre párrafos: discreto. El ritmo lo da la sangría. */
-.texto-cuerpo p {
+/* Espacio entre párrafos: solo hijos directos de .texto-cuerpo,
+   así la cabecera de bitácora (que va dentro de <header>) queda afuera. */
+.texto-cuerpo > p {
   margin: 0 0 .35rem;
 }
 
 /* Párrafos siguientes al primero: sangría editorial clásica. */
-.texto-cuerpo p + p {
+.texto-cuerpo > p + p {
   text-indent: 1.5em;
 }
 
 /* Primer párrafo: sin sangría y con capitular.
    Excepción: si el primer párrafo es un encabezado (todo en <strong>),
    no se aplica capitular ni sangría, porque se ve mal. */
-.texto-cuerpo p:first-of-type {
+.texto-cuerpo > p:first-of-type {
   text-indent: 0;
 }
 
-.texto-cuerpo p:first-of-type:not(:has(> strong:only-child))::first-letter {
+.texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
   font-family: "EB Garamond", Georgia, serif;
   font-size: 3.6em;
   line-height: .85;
