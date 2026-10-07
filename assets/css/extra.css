@@ -25,6 +25,9 @@ a:focus-visible, input:focus-visible, button:focus-visible { outline: 2px solid 
 
 .centrado { text-align: center; }
 /* Títulos centrados en relatos y entradas de la bitácora */
-.texto h1 { text-align: center; font-size: 1.5rem; line-height: 1.3; margin: 0 0 1.5rem; }
+.texto h1, main.site > h1, h1.page-title { text-align: center; font-size: 1.5rem; line-height: 1.3; margin: 0 0 1.5rem; }
 .texto-imagen img { margin-inline: auto; }
 body.pagina-entrada-00 .texto-cuerpo > p:nth-of-type(-n+3) { text-align: center; }
+/* Texto de introducción centrado bajo los títulos de las páginas */
+main.site > p, .lead { text-align: center; margin-inline: auto; }
+main.site > p { max-width: 40rem; }
