@@ -321,3 +321,33 @@ nav a.active::before {
 .hero-art img {
   width: min(100%, 420px);
 }
+/* ---------- Portada: acercar el texto y la R ---------- */
+
+.hero {
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  min-height: auto;
+  padding: 60px 0;
+}
+
+.hero-copy {
+  max-width: 460px;
+}
+
+.hero-art img {
+  width: min(100%, 400px);
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+}
