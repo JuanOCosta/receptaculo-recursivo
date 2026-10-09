@@ -1,0 +1,387 @@
+/* ============================================================
+   Estilos añadidos para las plantillas Jekyll.
+   No modifican style.css.
+   ============================================================ */
+
+/* ---------- Tipografía fina ---------- */
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" 1, "kern" 1;
+}
+
+/* ---------- Listas (relatos / bitácora / archivo) ---------- */
+
+.texto-lista {
+  list-style: none;
+  width: min(40rem, calc(100% - 2rem));
+  margin: 2rem auto;
+  padding: 0;
+  text-align: left;
+}
+
+.texto-item {
+  padding: 1.25rem 0;
+  border-top: 1px solid rgba(128,128,128,.35);
+}
+
+.texto-item:last-child {
+  border-bottom: 1px solid rgba(128,128,128,.35);
+}
+
+.texto-titulo {
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
+.texto-meta {
+  display: block;
+  margin-top: .25rem;
+  font-size: .9rem;
+  opacity: .7;
+}
+
+.texto-item p {
+  max-width: 42rem;
+  margin: .5rem 0 0;
+}
+
+/* ---------- Cuerpo de lectura (todos los relatos y entradas) ---------- */
+
+.texto-cuerpo {
+  width: min(38rem, calc(100% - 2rem));
+  margin-inline: auto;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  text-align: left;
+  hyphens: none;
+}
+
+.texto-cuerpo > p {
+  margin: 0 0 .35rem;
+}
+
+.texto-cuerpo > p + p {
+  text-indent: 1.5em;
+}
+
+.texto-cuerpo > p:first-of-type {
+  text-indent: 0;
+}
+
+.texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 3.6em;
+  line-height: .85;
+  float: left;
+  padding: .08em .12em 0 0;
+  font-weight: 500;
+}
+
+.texto-cuerpo em {
+  font-style: italic;
+}
+
+/* ---------- Cortes de escena ---------- */
+
+.corte {
+  height: auto;
+  margin: 2.5rem 0;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .85rem;
+  letter-spacing: .6em;
+  opacity: .5;
+}
+
+.corte::before {
+  content: "* * *";
+}
+
+/* ---------- Ilustración ---------- */
+
+.texto-imagen {
+  margin: 1.5rem 0;
+}
+
+.texto-imagen img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+/* ---------- Vacíos y suscripción ---------- */
+
+.vacio {
+  width: min(38rem, calc(100% - 2rem));
+  margin-inline: auto;
+  text-align: left;
+  opacity: .75;
+}
+
+.suscripcion {
+  width: min(38rem, calc(100% - 2rem));
+  margin: 3rem auto 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(128,128,128,.35);
+}
+
+.suscripcion form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1rem;
+}
+
+.suscripcion input[type="email"] {
+  flex: 1 1 14rem;
+  padding: .65rem .75rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid currentColor;
+}
+
+.vh {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+a:focus-visible,
+input:focus-visible,
+button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* ---------- Índice de la portada ---------- */
+
+.indice {
+  width: min(40rem, calc(100% - 2rem));
+  margin: 3rem auto;
+  text-align: left;
+}
+
+.indice-lista {
+  margin: 1rem 0 0;
+  padding-left: 2.5rem;
+  list-style: decimal-leading-zero;
+}
+
+.indice-lista li {
+  padding: .35rem 0;
+}
+
+.indice-lista a {
+  font-size: 1.15rem;
+}
+
+/* ---------- Títulos y encabezados ---------- */
+
+.texto h1,
+main.site > h1,
+h1.page-title {
+  margin: 3rem auto .75rem;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: center;
+  letter-spacing: -.01em;
+  max-width: min(38rem, calc(100% - 2rem));
+}
+
+main.site > p,
+.lead {
+  margin: 0 auto 2.5rem;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .85rem;
+  font-weight: 400;
+  letter-spacing: .06em;
+  line-height: 1.55;
+  text-align: center;
+  max-width: min(38rem, calc(100% - 2rem));
+}
+
+main.site > h2 {
+  text-align: center;
+  font-weight: 500;
+}
+
+.centrado {
+  text-align: center;
+}
+
+/* ---------- Navegación: marcar sección activa ---------- */
+
+nav a.active::before {
+  content: "*";
+  margin-right: .45em;
+  opacity: .6;
+  font-size: 1.05em;
+}
+
+/* ---------- Footer: enlaces extra ---------- */
+
+.footer-nav {
+  display: flex;
+  gap: 16px;
+  font: 11px "IBM Plex Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  justify-content: flex-start;
+}
+
+.footer-nav a {
+  color: inherit;
+  opacity: .8;
+}
+
+.footer-nav a:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Portada: centrar el conjunto texto + R ---------- */
+
+.hero {
+  width: min(100%, 1000px);
+  margin-inline: auto;
+  grid-template-columns: auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  min-height: auto;
+  padding: 60px 0;
+}
+
+.hero-copy {
+  max-width: 480px;
+}
+
+.hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-art img {
+  width: min(100%, 380px);
+}
+
+/* ---------- Cabecera de las entradas de bitácora ---------- */
+
+.entrada-cabecera {
+  width: min(38rem, calc(100% - 2rem));
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.entrada-cabecera p {
+  margin: 0;
+  text-indent: 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.entrada-cabecera .entrada-serie {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .8rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 1.25rem;
+}
+
+.entrada-cabecera .entrada-subtitulo {
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.entrada-cabecera .entrada-meta {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .8rem;
+  letter-spacing: .08em;
+  line-height: 1.7;
+  opacity: .75;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .hero {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .hero-copy {
+    max-width: none;
+  }
+
+  .hero-art img {
+    width: min(100%, 320px);
+  }
+}
+
+@media (max-width: 600px) {
+
+  .texto-lista,
+  .texto-cuerpo,
+  .vacio,
+  .suscripcion,
+  .indice,
+  main.site > p {
+    width: calc(100% - 2rem);
+  }
+
+  .texto-cuerpo {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
+    font-size: 3em;
+  }
+
+  .texto-titulo {
+    font-size: 1.15rem;
+  }
+
+  .texto h1,
+  main.site > h1,
+  h1.page-title {
+    margin-top: 2rem;
+    font-size: 2rem;
+  }
+
+  main.site > p,
+  .lead {
+    font-size: .78rem;
+    letter-spacing: .04em;
+  }
+
+  .indice-lista {
+    padding-left: 2rem;
+  }
+
+  .entrada-cabecera .entrada-subtitulo {
+    font-size: 1.35rem;
+  }
+}
+/* Más aire entre el título y el cuerpo en relatos y entradas */
+.texto > h1 {
+  margin-bottom: 2.5rem;
+}
