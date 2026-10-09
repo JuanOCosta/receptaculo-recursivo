@@ -102,15 +102,26 @@ body {
 
 /* ---------- Ilustración ---------- */
 
+/* El contenedor de la imagen mide lo mismo que el cuerpo de lectura. */
 .texto-imagen {
-  margin: 1.5rem 0;
+  width: min(38rem, calc(100% - 2rem));
+  margin: 2rem auto;
 }
 
+/* La imagen ocupa el 60% del ancho del contenedor, centrada. */
 .texto-imagen img {
   display: block;
+  width: 60%;
   max-width: 100%;
   height: auto;
   margin-inline: auto;
+}
+
+/* En mobile el 60% queda muy chico: sube al 80%. */
+@media (max-width: 600px) {
+  .texto-imagen img {
+    width: 80%;
+  }
 }
 
 /* ---------- Vacíos y suscripción ---------- */
