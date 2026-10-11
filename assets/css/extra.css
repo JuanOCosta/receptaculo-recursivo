@@ -401,9 +401,9 @@ nav a.active::before {
   text-align: center;
   font-family: "IBM Plex Mono", monospace;
   font-size: .85rem;
-  letter-spacing: .9em;
-  text-indent: .9em;
-  opacity: .4;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  opacity: .5;
 }
 
 .volver {
