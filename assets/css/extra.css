@@ -392,6 +392,28 @@ nav a.active::before {
     font-size: 1.35rem;
   }
 }
+
+/* ---------- Cierre del texto: colofón y enlace de vuelta ---------- */
+
+.colofon {
+  width: min(38rem, calc(100% - 2rem));
+  margin: 4rem auto 0;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .85rem;
+  letter-spacing: .9em;
+  text-indent: .9em;
+  opacity: .4;
+}
+
+.volver {
+  width: min(38rem, calc(100% - 2rem));
+  margin: 3rem auto 2rem;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .9rem;
+  letter-spacing: .05em;
+}
 /* Más aire entre el título y el cuerpo en relatos y entradas */
 .texto > h1 {
   margin-bottom: 2.5rem;
