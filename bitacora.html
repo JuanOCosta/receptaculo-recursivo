@@ -5,11 +5,17 @@ description: Registros diarios sobre la vida, la escritura, mis proyectos, proce
 permalink: /bitacora/
 ---
 <h1>Bitácora</h1>
-<p>Registro diario sobre la vida y cosas.</p>
+<p>Registros diarios sobre la vida, la escritura, mis proyectos, procesos, etcétera.</p>
+
 {% if site.posts.size > 0 %}
+{% assign posts_asc = site.posts | sort: "date" %}
+{% assign posts_por_anio = posts_asc | group_by_exp: "post", "post.date | date: '%Y'" %}
+{% for grupo in posts_por_anio %}
+<h2>{{ grupo.name }}</h2>
 <ul class="texto-lista">
-{% for p in site.posts %}{% include texto-item.html item=p %}{% endfor %}
+{% for p in grupo.items %}{% include texto-item.html item=p %}{% endfor %}
 </ul>
+{% endfor %}
 {% else %}
 <p class="vacio">La primera entrada se publicará aquí.</p>
 {% endif %}
