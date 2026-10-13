@@ -395,8 +395,6 @@ nav a.active::before {
 
 /* ---------- Cierre del texto: colofón y enlace de vuelta ---------- */
 
-/* ---------- Cierre del texto: colofón y enlace de vuelta ---------- */
-
 .colofon {
   width: min(38rem, calc(100% - 2rem));
   margin: 3rem auto;
@@ -408,13 +406,28 @@ nav a.active::before {
   opacity: .5;
 }
 
-.volver {
+/* ---------- Navegación entre entradas de bitácora ---------- */
+
+.navegacion-entradas {
   width: min(38rem, calc(100% - 2rem));
   margin: 0 auto 3rem;
-  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
   font-family: "IBM Plex Mono", monospace;
   font-size: .9rem;
   letter-spacing: .05em;
+}
+
+.navegacion-entradas a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.navegacion-entradas a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 /* Más aire entre el título y el cuerpo en relatos y entradas */
 .texto > h1 {
