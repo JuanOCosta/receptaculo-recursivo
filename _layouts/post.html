@@ -10,4 +10,9 @@ layout: default
   <div class="colofon" aria-hidden="true">* * *</div>
 </article>
 {% include suscripcion.html %}
-<p class="volver"><a href="{{ '/bitacora/' | relative_url }}">← Toda la bitácora</a></p>
+<nav class="navegacion-entradas" aria-label="Navegación entre entradas">
+  <a class="volver" href="{{ '/bitacora/' | relative_url }}">← Toda la bitácora</a>
+  {% if page.next %}
+  <a class="siguiente" href="{{ page.next.url | relative_url }}">Siguiente entrada →</a>
+  {% endif %}
+</nav>
