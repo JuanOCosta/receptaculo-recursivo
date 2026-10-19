@@ -65,4 +65,5 @@ Si usas dominio propio, cambia `url` por tu dominio y deja `baseurl: ""` en `_co
 
 ## Probar en tu ordenador (opcional)
 
-Requiere Ruby. En la carpeta del proyecto: `bundle install` y luego `bundle exec jekyll serve`. El sitio se abre en `http://localhost:4000/receptaculo-recursivo/`.
+Requiere Ruby. En la carpeta del proyecto: `bundle install` y luego `bundle exec jekyll serve`. El sitio se abre en `http://localhost:4000/receptaculo-recursivo/`. 
+
