@@ -407,10 +407,9 @@ nav a.active::before {
 }
 
 /* ---------- Navegación entre entradas de bitácora ---------- */
-
 .navegacion-entradas {
   width: min(38rem, calc(100% - 2rem));
-  margin: 0 auto 3rem;
+  margin: 0 auto 4rem; /* Sube al quedar pegado al bloque anterior, y deja 4rem de aire con el footer */
   display: flex;
   justify-content: space-between;
   align-items: baseline;
@@ -419,6 +418,7 @@ nav a.active::before {
   font-size: .9rem;
   letter-spacing: .05em;
 }
+
 
 .navegacion-entradas a {
   color: inherit;
@@ -436,10 +436,9 @@ nav a.active::before {
 
 
 /* ---------- Botones de compartir ---------- */
-
 .compartir {
   width: min(38rem, calc(100% - 2rem));
-  margin: 2rem auto 3rem;
+  margin: 1.5rem auto 1rem; /* Redujimos el margen inferior para acercarlo a los enlaces */
   text-align: center;
   font-family: "IBM Plex Mono", monospace;
 }
