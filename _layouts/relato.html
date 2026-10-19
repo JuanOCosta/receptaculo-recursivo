@@ -9,5 +9,10 @@ layout: default
   </div>
   <div class="colofon" aria-hidden="true">* * *</div>
 </article>
+
 {% include suscripcion.html %}
-<p class="volver"><a href="{{ '/relatos/' | relative_url }}">← Todos los relatos</a></p>
+{% include compartir.html %}
+
+<nav class="navegacion-entradas" aria-label="Navegación entre relatos">
+  <a class="volver" href="{{ '/relatos/' | relative_url }}">← Todos los relatos</a>
+</nav>
