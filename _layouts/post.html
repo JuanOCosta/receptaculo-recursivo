@@ -3,13 +3,28 @@ layout: default
 ---
 <article class="texto">
   {% unless page.sin_titulo %}<h1>{{ page.title }}</h1>{% endunless %}
+  
+  <!-- Renderizamos la cabecera de la bitácora usando los datos del Front Matter -->
+  {% if page.serie or page.subtitulo %}
+  <div class="entrada-cabecera">
+    {% if page.serie %}<p class="entrada-serie">{{ page.serie }}</p>{% endif %}
+    {% if page.subtitulo %}<p class="entrada-subtitulo">{{ page.subtitulo }}</p>{% endif %}
+    <p class="entrada-meta">{{ page.title }}{% if page.fecha %}<br>{{ page.fecha }}{% endif %}</p>
+  </div>
+  {% endif %}
+
+  <!-- La imagen ahora se inserta después de la cabecera -->
   {% include ilustracion.html carpeta="bitacora" %}
+  
+  <!-- El contenido ahora arranca directo con los párrafos -->
   <div class="texto-cuerpo">
     {{ content }}
   </div>
+  
   <div class="colofon" aria-hidden="true">* * *</div>
 </article>
 {% include suscripcion.html %}
+{% include compartir.html %}
 <nav class="navegacion-entradas" aria-label="Navegación entre entradas">
   <a class="volver" href="{{ '/bitacora/' | relative_url }}">← Toda la bitácora</a>
   {% if page.next %}
