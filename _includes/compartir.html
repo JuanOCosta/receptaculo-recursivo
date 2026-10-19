@@ -1,0 +1,23 @@
+<div class="compartir" aria-label="Compartir esta página">
+  <span class="compartir-etiqueta">Compartir</span>
+  <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">Twitter</a>
+  <span aria-hidden="true">·</span>
+  <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+  <span aria-hidden="true">·</span>
+  <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}" target="_blank" rel="noopener noreferrer">Facebook</a>
+  <span aria-hidden="true">·</span>
+  <a href="https://t.me/share/url?url={{ page.url | absolute_url | url_encode }}&text={{ page.title | url_encode }}" target="_blank" rel="noopener noreferrer">Telegram</a>
+  <span aria-hidden="true">·</span>
+  <button type="button" class="compartir-copiar" data-url="{{ page.url | absolute_url }}">Copiar enlace</button>
+</div>
+<script>
+document.querySelectorAll('.compartir-copiar').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    navigator.clipboard.writeText(btn.dataset.url).then(function(){
+      var original = btn.textContent;
+      btn.textContent = 'Copiado';
+      setTimeout(function(){ btn.textContent = original; }, 1500);
+    });
+  });
+});
+</script>
