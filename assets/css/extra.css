@@ -291,7 +291,7 @@ nav a.active::before {
 
 .entrada-cabecera {
   width: min(38rem, calc(100% - 2rem));
-  margin: 2 auto 3rem;
+  margin: 3rem auto;
   text-align: center;
 }
 
