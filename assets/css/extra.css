@@ -461,17 +461,24 @@ nav a.active::before {
 }
 
 .compartir-iconos a {
+  display: inline-flex; /* Fuerza a que el enlace se ajuste al icono */
+  align-items: center;
+  justify-content: center;
   color: inherit;
   opacity: .6;
   transition: opacity 0.2s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-decoration: none;
 }
 
 .compartir-iconos a:hover {
   opacity: 1;
   transform: translateY(-2px);
+}
+
+/* Por si acaso, forzamos un tamaño máximo al SVG */
+.compartir-iconos svg {
+  max-width: 20px;
+  max-height: 20px;
 }
 
 .compartir-iconos svg {
