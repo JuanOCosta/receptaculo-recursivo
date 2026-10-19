@@ -433,3 +433,48 @@ nav a.active::before {
 .texto > h1 {
   margin-bottom: 2.5rem;
 }
+
+
+/* ---------- Botones de compartir ---------- */
+
+.compartir {
+  width: min(38rem, calc(100% - 2rem));
+  margin: 2rem auto 3rem;
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.compartir-etiqueta {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: .72rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  opacity: .5;
+}
+
+.compartir-iconos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.compartir-iconos a {
+  color: inherit;
+  opacity: .6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compartir-iconos a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.compartir-iconos svg {
+  width: 20px;
+  height: 20px;
+}
