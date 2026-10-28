@@ -54,23 +54,27 @@ body {
   width: min(38rem, calc(100% - 2rem));
   margin-inline: auto;
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.6; /* Más cerrado, estilo Google Docs */
   text-align: left;
   hyphens: none;
 }
 
+/* Espacio generoso entre párrafos */
 .texto-cuerpo > p {
-  margin: 0 0 .35rem;
+  margin: 0 0 1.5rem;
 }
 
+/* Quitamos la sangría de los párrafos siguientes */
 .texto-cuerpo > p + p {
-  text-indent: 1.5em;
+  text-indent: 0;
 }
 
+/* Primer párrafo: sin sangría */
 .texto-cuerpo > p:first-of-type {
   text-indent: 0;
 }
 
+/* Mantenemos la letra capital intacta */
 .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
   font-family: "EB Garamond", Georgia, serif;
   font-size: 3.6em;
@@ -83,7 +87,6 @@ body {
 .texto-cuerpo em {
   font-style: italic;
 }
-
 /* ---------- Cortes de escena ---------- */
 
 .corte {
@@ -119,9 +122,22 @@ body {
 
 /* En mobile el 60% queda muy chico: sube al 80%. */
 @media (max-width: 600px) {
-  .texto-imagen img {
-    width: 80%;
+  /* ... otras reglas ... */
+
+  .texto-cuerpo {
+    font-size: 1.0625rem;
+    line-height: 1.5; /* Un poquito más cerrado en celular */
   }
+
+  .texto-cuerpo > p {
+    margin: 0 0 1.25rem; /* Espacio entre párrafos adaptado a mobile */
+  }
+
+  .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
+    font-size: 3em;
+  }
+  
+  /* ... resto de las reglas ... */
 }
 
 /* ---------- Vacíos y suscripción ---------- */
