@@ -53,25 +53,22 @@ body {
 .texto-cuerpo {
   width: min(38rem, calc(100% - 2rem));
   margin-inline: auto;
-  font-size: 1.125rem;
-  line-height: 1.6; /* Más cerrado, estilo Google Docs */
+  font-size: 1.25rem; /* Letra más grande (antes 1.125) */
+  line-height: 1.6;
   text-align: left;
   hyphens: none;
 }
 
-/* Espacio generoso entre párrafos */
+/* Espaciado y sangría para todos los párrafos */
 .texto-cuerpo > p {
-  margin: 0 0 1.5rem;
+  margin: 0 0 0.75rem; /* Menos espacio entre párrafos porque ahora hay sangría */
+  text-indent: 1.5em; /* La sangría clásica */
 }
 
-/* Quitamos la sangría de los párrafos siguientes */
-.texto-cuerpo > p + p {
-  text-indent: 0;
-}
-
-/* Primer párrafo: sin sangría */
+/* Excepción: El primer párrafo no lleva sangría para que la letra capital quede al ras */
 .texto-cuerpo > p:first-of-type {
   text-indent: 0;
+  margin-bottom: 1rem; /* Un poquito más de aire después de la capitular */
 }
 
 /* Mantenemos la letra capital intacta */
@@ -125,12 +122,17 @@ body {
   /* ... otras reglas ... */
 
   .texto-cuerpo {
-    font-size: 1.0625rem;
-    line-height: 1.5; /* Un poquito más cerrado en celular */
+    font-size: 1.125rem; /* Letra más grande en mobile también */
+    line-height: 1.6;
   }
 
   .texto-cuerpo > p {
-    margin: 0 0 1.25rem; /* Espacio entre párrafos adaptado a mobile */
+    margin: 0 0 0.75rem;
+    text-indent: 1.5em;
+  }
+  
+  .texto-cuerpo > p:first-of-type {
+    text-indent: 0;
   }
 
   .texto-cuerpo > p:first-of-type:not(:has(> strong:only-child))::first-letter {
