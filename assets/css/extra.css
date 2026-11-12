@@ -511,3 +511,13 @@ nav a.active::before {
   margin: -0.5rem auto 2.5rem;
   max-width: min(38rem, calc(100% - 2rem));
 }
+.premio-relato-sello {
+  text-align: center;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.75rem; /* Mucho más chico */
+  letter-spacing: 0.1em;
+  text-transform: uppercase; /* Todo en mayúsculas */
+  opacity: 0.6;
+  margin: -0.5rem auto 2.5rem;
+  max-width: min(38rem, calc(100% - 2rem));
+}
