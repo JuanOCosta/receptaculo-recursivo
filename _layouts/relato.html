@@ -2,12 +2,13 @@
 layout: default
 ---
 <article class="texto">
-<h1>{{ page.title }}</h1>
   
-{% if page.premio %}
-  <p class="premio-relato">{{ page.premio }}</p>
-{% endif %}
+  {% if page.premio %}
+    <p class="premio-kicker">{{ page.premio }}</p>
+  {% endif %}
 
+  <h1>{{ page.title }}</h1>
+  
   {% include ilustracion.html carpeta="relatos" %}
   <div class="texto-cuerpo">
     {{ content }}
