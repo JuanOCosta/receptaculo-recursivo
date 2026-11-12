@@ -502,22 +502,14 @@ nav a.active::before {
   width: 20px;
   height: 20px;
 }
-.premio-relato {
-  text-align: center;
-  font-family: "EB Garamond", Georgia, serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  color: var(--muted); /* Usa el gris de tu paleta */
-  margin: -0.5rem auto 2.5rem;
-  max-width: min(38rem, calc(100% - 2rem));
-}
-.premio-relato-sello {
+/* ---------- Sello de premio (arriba del título) ---------- */
+.premio-kicker {
   text-align: center;
   font-family: "IBM Plex Mono", monospace;
-  font-size: 0.75rem; /* Mucho más chico */
-  letter-spacing: 0.1em;
+  font-size: 0.8rem; /* Letra chica y sutil */
+  letter-spacing: 0.15em; /* Espaciado entre letras */
   text-transform: uppercase; /* Todo en mayúsculas */
-  opacity: 0.6;
-  margin: -0.5rem auto 2.5rem;
+  color: var(--muted); /* El gris de tu paleta */
+  margin: 0 auto 1.5rem; /* Un poco de aire abajo para separarlo del título */
   max-width: min(38rem, calc(100% - 2rem));
 }
