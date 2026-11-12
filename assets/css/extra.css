@@ -502,3 +502,12 @@ nav a.active::before {
   width: 20px;
   height: 20px;
 }
+.premio-relato {
+  text-align: center;
+  font-family: "EB Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--muted); /* Usa el gris de tu paleta */
+  margin: -0.5rem auto 2.5rem;
+  max-width: min(38rem, calc(100% - 2rem));
+}
