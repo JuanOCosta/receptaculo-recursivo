@@ -1,17 +1,54 @@
 ---
 layout: default
 title: Bitácora
-description: Crónica de pensamientos
+description: Registros diarios sobre la vida, la escritura, mis proyectos, procesos, etcétera
 permalink: /bitacora/
 ---
 <h1>Bitácora del autor muerto</h1>
 <p>Crónica de pensamientos y registros periódicos</p>
 
-{% if site.posts.size > 0 %}
 {% assign posts_asc = site.posts | sort: "date" %}
+{% assign prologo = posts_asc.first %}
+
+{% if prologo %}
+  <!-- ACÁ EMPIEZA EL PRÓLOGO -->
+  <article class="texto">
+    {% if prologo.serie or prologo.subtitulo %}
+    <div class="entrada-cabecera">
+      {% if prologo.serie %}<p class="entrada-serie">{{ prologo.serie }}</p>{% endif %}
+      {% if prologo.subtitulo %}<p class="entrada-subtitulo">{{ prologo.subtitulo }}</p>{% endif %}
+      <p class="entrada-meta">{{ prologo.title }}{% if prologo.fecha %}<br>{{ prologo.fecha }}{% endif %}</p>
+    </div>
+    {% endif %}
+
+    <!-- Busca la imagen del prólogo automáticamente -->
+    {% assign ext_list = "png,jpg,jpeg,webp,svg" | split: "," %}
+    {% assign img_found = false %}
+    {% for ext in ext_list %}
+      {% unless img_found %}
+        {% assign test_path = '/assets/img/bitacora/' | append: prologo.slug | append: '.' | append: ext %}
+        {% assign check = site.static_files | where: "path", test_path | first %}
+        {% if check %}
+          <figure class="texto-imagen"><img src="{{ test_path | relative_url }}" alt="Ilustración de {{ prologo.title | escape }}"></figure>
+          {% assign img_found = true %}
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+
+    <div class="texto-cuerpo">
+      {{ prologo.content }}
+    </div>
+  </article>
+  
+  <!-- Línea separadora elegante antes del índice -->
+  <div style="border-top: 1px solid rgba(128,128,128,.35); margin: 4rem auto; width: min(38rem, calc(100% - 2rem));"></div>
+{% endif %}
+
+<!-- ACÁ EMPIEZA EL ÍNDICE (Lo que ya tenías) -->
+{% if site.posts.size > 0 %}
 {% assign posts_por_anio = posts_asc | group_by_exp: "post", "post.date | date: '%Y'" %}
 {% for grupo in posts_por_anio %}
-<h2>{{ grupo.name }}</h2>
+<h2 style="margin-top: 3rem; margin-bottom: 1.5rem; font-size: 2rem;">{{ grupo.name }}</h2>
 <ul class="texto-lista">
 {% for p in grupo.items %}{% include texto-item.html item=p %}{% endfor %}
 </ul>
@@ -19,4 +56,5 @@ permalink: /bitacora/
 {% else %}
 <p class="vacio">La primera entrada se publicará aquí.</p>
 {% endif %}
+
 {% include suscripcion.html %}
